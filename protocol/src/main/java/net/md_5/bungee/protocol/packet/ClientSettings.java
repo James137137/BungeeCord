@@ -31,10 +31,6 @@ public class ClientSettings extends DefinedPacket
         viewDistance = buf.readByte();
         chatFlags = protocolVersion >= ProtocolConstants.MINECRAFT_1_9 ? DefinedPacket.readVarInt( buf ) : buf.readUnsignedByte();
         chatColours = buf.readBoolean();
-        if ( protocolVersion <= ProtocolConstants.MINECRAFT_1_7_6 )
-        {
-            difficulty = buf.readByte();
-        }
         skinParts = buf.readByte();
         if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
         {
@@ -55,10 +51,6 @@ public class ClientSettings extends DefinedPacket
             buf.writeByte( chatFlags );
         }
         buf.writeBoolean( chatColours );
-        if ( protocolVersion <= ProtocolConstants.MINECRAFT_1_7_6 )
-        {
-            buf.writeByte( difficulty );
-        }
         buf.writeByte( skinParts );
         if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_9 )
         {
