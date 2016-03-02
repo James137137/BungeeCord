@@ -97,7 +97,7 @@ enum ForgeClientHandshakeState implements IForgeClientPacketHandler<ForgeClientH
                                 {
                                     // Mark the user as an old Forge user. This will then cause any Forge ServerConnectors to cancel any
                                     // connections to it.
-                                    con.getForgeClientHandler().setForgeOutdated( true );
+                                    // con.getForgeClientHandler().setForgeOutdated( true );
                                 }
                             }
                         }

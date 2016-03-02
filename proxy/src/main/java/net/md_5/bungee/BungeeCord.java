@@ -144,6 +144,9 @@ public class BungeeCord extends ProxyServer
     private final Logger logger;
     public final Gson gson = new GsonBuilder()
             .registerTypeAdapter( ServerPing.PlayerInfo.class, new PlayerInfoSerializer( ProtocolConstants.MINECRAFT_1_7_6 ) )
+            .registerTypeAdapter( BaseComponent.class, new ComponentSerializer() )
+            .registerTypeAdapter( TextComponent.class, new TextComponentSerializer() )
+            .registerTypeAdapter( TranslatableComponent.class, new TranslatableComponentSerializer() )
             .registerTypeAdapter( Favicon.class, Favicon.getFaviconTypeAdapter() ).create();
     public final Gson gsonLegacy = new GsonBuilder()
             .registerTypeAdapter( ServerPing.PlayerInfo.class, new PlayerInfoSerializer( ProtocolConstants.MINECRAFT_1_7_2 ) )
