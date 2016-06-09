@@ -129,8 +129,10 @@ public enum Protocol
                     PlayerListHeaderFooter.class,
                     map( ProtocolConstants.MINECRAFT_1_8, 0x47 ),
                     map( ProtocolConstants.MINECRAFT_1_9, 0x48 ),
-                    map( ProtocolConstants.MINECRAFT_1_9_4, 0x47 )
+                    map( ProtocolConstants.MINECRAFT_1_9_4, 0x47 ),
+                    map( ProtocolConstants.MINECRAFT_1_10, 0x47 )
             );
+            
             TO_CLIENT.registerPacket(
                     SetCompression.class,
                     map( ProtocolConstants.MINECRAFT_1_7_2, 0x46 , false ),
@@ -269,11 +271,13 @@ public enum Protocol
             linkedProtocols.put( ProtocolConstants.MINECRAFT_1_8, Arrays.asList(
                     ProtocolConstants.MINECRAFT_1_7_2,
                     ProtocolConstants.MINECRAFT_1_9
-            ));
-            linkedProtocols.put( ProtocolConstants.MINECRAFT_1_9, Arrays.asList(ProtocolConstants.MINECRAFT_1_9_1,
-                ProtocolConstants.MINECRAFT_1_9_2,
-                ProtocolConstants.MINECRAFT_1_9_4
-            ));
+            ) );
+            linkedProtocols.put( ProtocolConstants.MINECRAFT_1_9, Arrays.asList(
+                    ProtocolConstants.MINECRAFT_1_9_1,
+                    ProtocolConstants.MINECRAFT_1_9_2,
+                    ProtocolConstants.MINECRAFT_1_9_4,
+                    ProtocolConstants.MINECRAFT_1_10
+            ) );
         }
 
         @Getter
